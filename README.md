@@ -222,7 +222,8 @@ git checkout fb00b6e
 sed -i '10s/\[dependencies\]/\[workspace\.dependencies\]/g' Cargo.toml
 
 ## Add missing cargo dependencies
-cargo add cpal flume bytemuck rand wgpu toml sha2 rustfft serde unicode_width crossterm anyhow
+cargo add cpal flume bytemuck rand wgpu toml sha2 rustfft serde unicode_width crossterm anyhow notify pollster parse arg command clap 
+
 
 ## Install chroma
 cargo install --path .
