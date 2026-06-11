@@ -206,12 +206,25 @@ You'll need to install a specific commit, which is the latest one that works.
 How to install Chroma:
 
 ```
+## Install rust if not already installed
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+## Clone repository
 git clone https://github.com/yuri-xyz/chroma.git
 
+## Move to chroma directory
 cd chroma
 
+## Retrieve specifc commit
 git checkout fb00b6e
 
+## Fix the Cargo.toml file
+sed -i '10s/\[dependencies\]/\[workspace\.dependencies\]/g' Cargo.toml
+
+## Add missing cargo dependencies
+cargo add cpal flume bytemuck rand wgpu toml sha2 rustfft serde unicode_width crossterm anyhow
+
+## Install chroma
 cargo install --path .
 ```
 
