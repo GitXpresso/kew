@@ -222,12 +222,17 @@ git checkout fb00b6e
 sed -i '10s/\[dependencies\]/\[workspace\.dependencies\]/g' Cargo.toml
 
 ## Add missing cargo dependencies
-cargo add cpal flume bytemuck rand wgpu toml sha2 rustfft serde unicode_width crossterm anyhow notify pollster parse arg command clap 
+cargo add cpal flume bytemuck rand wgpu toml sha2 rustfft serde unicode_width crossterm anyhow notify pollster parse arg command clap
+
 ## Install Alsa Sys Devel
 Ubuntu: sudo apt-get install libasound2-dev libudev-dev -y
+
 Fedora: sudo dnf install -y rust-alsa-sys-devel
+
 Arch: sudo pacman -S alsa-lib
+
 Debian: sudo apt-get install libasound2-dev libudev-dev -y
+
 ## Install chroma
 cargo install --path .
 ```
